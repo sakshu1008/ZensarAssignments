@@ -1,0 +1,108 @@
+Create a class called Accounts which has data members like Account no, Customer name, 
+Account type, Transaction type (d/w), amount, balance.
+D->Deposit
+W->Withdrawal
+
+-write a function that updates the balance depending upon the transaction type.
+	-If transaction type is deposit call the credit(int amount) function and update balance.
+	-If transaction type is withdraw call debit(int amt)function and update balance.
+-Pass the other information like Acount no,name,acc type through constructor.
+-call the show data method to display the values.
+
+
+______________________________________________________________________________________________________________________________
+
+using System;
+
+namespace Account25jan
+{
+    class Account
+    {
+        public long AccNo;
+        public string Name;
+        public string AccType;
+        public string TransactionType;
+        public int Amount;
+        public float balance;
+
+        public  Account(long accountno, string name,string acctype,string transaction,int amount)
+        {
+            AccNo = accountno;
+            Name = name;
+            AccType = acctype;
+            TransactionType = transaction;
+            Amount = amount;
+        }
+        public void Credit(int amt)
+        {
+            balance = balance + amt;
+        }
+        public void Debit(int amt)
+        {
+            balance = balance - amt;
+        }
+        public void update()
+        {
+            if (TransactionType == "Deposite")
+            {
+                Credit(Amount);
+            }
+            else if(TransactionType == "Withdraw")
+            {
+                Debit(Amount);
+            }
+        }
+
+        public void BalanceofAccount()
+        {
+            Console.WriteLine("Enter Account balance before transaction: ");
+            balance = float.Parse(Console.ReadLine());
+        }
+        public void show()
+        {
+            Console.WriteLine($"Name : {Name}");
+            Console.WriteLine($"Account Number : {AccNo}");
+            Console.WriteLine($"Account Type : {AccType}");
+            Console.WriteLine($"Transacation Type : {TransactionType}");
+            Console.WriteLine($"Balance : {balance}");
+        }
+
+    }
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Account Ac = new Account(8596352545,"Sakshi","Saving", "Deposite",2000);
+            //Ac.balance = 60000;
+            Ac.BalanceofAccount();
+            Ac.update();
+            Ac.show();
+            Console.WriteLine(" ");
+            Account Ac1 = new Account(0484256314, "Saurabh", "Loan", "Withdraw", 35000);
+            //Ac1.balance = 100000;
+            Ac1.BalanceofAccount();
+            Ac1.update();
+            Ac1.show();
+            Console.Read();
+        }
+    }
+}
+_______________________________________________________________________________________________________________________________________________________
+
+Enter Account balance before transaction:
+90000
+Name : Sakshi
+Account Number : 8596352545
+Account Type : Saving
+Transacation Type : Deposite
+Balance : 92000
+
+Enter Account balance before transaction:
+100000
+Name : Saurabh
+Account Number : 484256314
+Account Type : Loan
+Transacation Type : Withdraw
+Balance : 65000

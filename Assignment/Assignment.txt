@@ -1,0 +1,56 @@
+------------------------------------------------CLASS1.cs-----------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculateConcession_
+{
+    public class Calculate_Method
+    {
+        public double CalculateConcession(int age, int totalFare)
+        {
+            double totalfare;
+            if (age <= 5)
+            {
+                Console.WriteLine("Little Champs - Free Ticket.");
+            }
+            else if (age > 60)
+            {
+                double concession = 0.3;
+                totalfare = totalFare * concession;
+                Console.WriteLine("Senior Citizen Fare : " + totalfare);
+            }
+            else
+            {
+                Console.WriteLine("Print Tickets Booked with Fare : " + totalFare);
+            }
+            return 0;
+        }
+    }
+}
+
+----------------------------------------------------------PROGRAM.cs--------------------------------------------------------------------
+
+using System;
+using _2FebAssgn4;
+
+namespace _2FebAssgn4
+{
+    class Program
+    {
+        public const int ToolFare = 500;
+        static void Main(string[] args)
+        {
+            string Passenger_Name;
+            int Passenger_Age;
+            Console.WriteLine("Enter passenger Name: ");
+            Passenger_Name = Console.ReadLine();
+            Console.WriteLine("Enter passenger Age : ");
+            Passenger_Age = int.Parse(Console.ReadLine());
+            Calculate_Method CM = new Calculate_Method();
+            CM.CalculateConcession(Passenger_Age, ToolFare);
+        }
+    }
+}

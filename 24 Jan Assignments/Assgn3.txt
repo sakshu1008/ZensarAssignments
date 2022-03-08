@@ -1,0 +1,46 @@
+-->Create a program, which accepts 3 numbers as input from the user and prints the largest and smallest of 3 numbers.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assgn3
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+            if(a > b && a > c)
+            {
+                Console.WriteLine("{0} is largest number.",a);
+            }
+            else if(b > a && b > c)
+            {
+                Console.WriteLine("{0} is largest number.",b);
+            }
+            else
+            {
+                Console.WriteLine("{0} is largest number.",c);
+            }
+            if(a < b && a < c)
+            {
+                Console.WriteLine("{0} is smallest number.",a);
+            }
+            else if (b < a && b < c)
+            {
+                Console.WriteLine("{0} is smallest number.", b);
+            }
+            else
+            {
+                Console.WriteLine("{0} is smallest number.", c);
+            }
+        }
+    }
+}

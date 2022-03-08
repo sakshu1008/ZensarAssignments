@@ -1,0 +1,45 @@
+-->Write a program which accepts marks of 5 students for C#,HTML and Sql (3 subjects),calculates the average and prints result as passed or failed
+If avg < 50 then failed else passed. 
+
+
+
+
+using System;
+
+namespace Assgn44
+{
+    class Program
+    {
+        static void Student()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Enter Student Name: ");
+            String Name = Console.ReadLine();
+            Console.WriteLine($"Enter C# Marks of {Name} : ");
+            int CMarks = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Enter HTML Marks of {Name} : ");
+            int HMarks = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Enter SQL Marks of {Name}: ");
+            int SMarks = int.Parse(Console.ReadLine());
+
+            float avg = (CMarks + HMarks + SMarks) / 3;
+            Console.WriteLine($"Average of {Name} is : {avg}");
+
+            if(avg < 50)
+            {
+                Console.WriteLine("Result : Failed !!!");
+            }
+            else
+            {
+                Console.WriteLine("Result : Passed !!!");
+            }
+        }
+        static void Main(string[] args)
+        {
+            for(int i = 1; i <= 5; i++)
+            {
+                Student();
+            }
+        }
+    }
+}

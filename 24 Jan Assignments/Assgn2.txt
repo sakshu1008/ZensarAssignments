@@ -1,0 +1,22 @@
+-->>Accept a number from the user and display whether the given number is an odd number or even number.
+
+
+using System;
+namespace Assgn2
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            if(a % 2 == 0)
+            {
+                Console.WriteLine($"{a} is even number.");
+            }
+            else
+            {
+                Console.WriteLine($"{a} is odd number.");
+            }
+        }
+    }
+}

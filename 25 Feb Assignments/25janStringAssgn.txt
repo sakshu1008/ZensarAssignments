@@ -1,0 +1,51 @@
+-->	1.	Write a program in C# to accept a word from the user and display the length of it.
+	2.	Write a program in C# to accept a word from the user and display the reverse of it. 
+	3.	Write a program in C# to accept two words from user and find out if they are same. 
+
+____________________________________________________________________________________________________
+
+
+using System;
+
+namespace String123
+{
+    class Program
+    {
+        public static string Reverse(string Input)
+        {
+            char[] charArray = Input.ToCharArray();
+            string reversedString = String.Empty;
+            for (int i = charArray.Length - 1; i > -1; i--)
+            {
+                reversedString += charArray[i];
+            }
+
+            return reversedString;
+        }
+        static void Main(string[] args)
+        {
+            string s1, s2;
+            s1 = Console.ReadLine();
+            s2 = Console.ReadLine();
+            Console.WriteLine("Length of {0} is : {1}" ,s1,s1.Length);
+            Console.WriteLine("Reverse of {0} is : {1}",s1,Reverse(s1));
+            if ( s1 == s2)
+            {
+                Console.WriteLine("Both strings are same");
+            }
+            else
+            {
+                Console.WriteLine("Both strings are not same");
+            }
+        }
+    }
+}
+______________________________________________________________________________________________________________________________________________________
+
+Enter string 1:
+DotNet
+Enter string 2:
+DotNet
+Length of DotNet is : 6
+Reverse of DotNet is : teNtoD
+Both strings are same

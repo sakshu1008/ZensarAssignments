@@ -1,0 +1,26 @@
+-->Write a program in C# to display temperature in Celsius. Accept the temperature in Fahrenheit.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;  
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assgn5
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            float temp_f;
+            float temp_c;
+            Console.WriteLine("Enter temperature in Fahrenheit:");
+            temp_f = float.Parse(Console.ReadLine());
+            Console.WriteLine();
+            temp_c = (temp_f - 32) * 0.56f;
+            Console.WriteLine($"Temperature in Celcius : {temp_c}");
+        }
+    }
+}

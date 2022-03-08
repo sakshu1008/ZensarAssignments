@@ -1,0 +1,92 @@
+Create a console application to book train tickets. Create a Passanger class 
+with (Name, Age) and write a function called TicketBooking(no_of_tickets) 
+that takes no.of tickets to be booked. If the no of tickets is > 5 per booking,
+raise an user defined exception, and print "cannot book more than 2 tickets".
+Else Print  "Ticket Booked Successfully". Add a Test class to call TicketBooking
+method by accepting all required details.
+________________________________________________________________________________________________________________
+using System;
+
+namespace _28JanExceptionAssgn1
+{
+    class TicketException : ApplicationException
+    {
+        public TicketException(string msg) : base(msg)
+        {
+
+        }
+    }
+    class Passanger
+    {
+        public string Name;
+        public int Age;
+
+        public void GetData()
+        {
+            Console.WriteLine("______________________________________________");
+            Console.WriteLine("Enter name : ");
+            Name = Console.ReadLine();
+            Console.WriteLine("Enter age : ");
+            Age = int.Parse(Console.ReadLine());
+        }
+        public void TicketBooking()
+        {
+            Console.WriteLine("Enter how many tickets you want to book : ");
+            int no_of_tickets = int.Parse(Console.ReadLine());
+            if (no_of_tickets > 5)
+            {
+                throw (new TicketException("Cannot book more than 2 tickets"));
+            }
+            else
+            {
+                Console.WriteLine("Ticket Booked Successfully");
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Passanger p1 = new Passanger();
+            p1.GetData();
+            try
+            {
+                p1.TicketBooking();
+
+            }catch(TicketException TE)
+            {
+                Console.WriteLine(TE.Message);
+            }
+            Passanger p2 = new Passanger();
+            p2.GetData();
+            try
+            {
+                p2.TicketBooking();
+
+            }
+            catch (TicketException TE)
+            {
+                Console.WriteLine(TE.Message);
+            }
+            Console.Read();
+        }
+    }
+}
+________________________________________________________________________________________________________________
+ ______________________________________________
+Enter name :
+Sakshi
+Enter age :
+22
+Enter how many tickets you want to book :
+5
+Ticket Booked Successfully
+______________________________________________
+Enter name :
+Saurabh
+Enter age :
+20
+Enter how many tickets you want to book :
+9
+Cannot book more than 2 tickets
+

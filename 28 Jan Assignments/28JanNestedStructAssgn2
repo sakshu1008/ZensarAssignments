@@ -1,0 +1,78 @@
+Write a program in C# Sharp to insert the information of two books. 
+
+Test Data :
+
+Insert the information of two books :                    
+-----------------------------------------                
+Information of book 1 :                                  
+Input name of the book : BASIC                           
+Input the author : S.TROELSTRA                           
+                                                         
+Information of book 2 :                                  
+Input name of the book : C+                              
+Input the author : G.RTRTG
+
+Expected Output:
+
+1: Title = BASIC,  Author = S.TROELSTRA                  
+                                                         
+2: Title = C+,  Author = G.RTRTG
+____________________________________________________________________________________________________
+using System;
+
+namespace _28JanNestedStructAssgn
+{
+    class Program
+    {
+        struct Book
+        {
+            public string bName;
+            internal string AuthorName;
+        }
+        static void Main(string[] args)
+        {
+            int total = 2;
+
+            Book[] b1 = new Book[total];
+            Console.WriteLine("Insert the information of two books :");
+            Console.WriteLine("-----------------------------------------");
+            for (int i = 0; i < total; i++)
+            {
+                Console.WriteLine($"Information of book {i + 1} : ");
+                Console.Write("Input name of the book : ");
+                string name = Console.ReadLine();
+                b1[i].bName = name;
+
+                Console.Write("Input the author : ");
+                string Aname = Console.ReadLine();
+                b1[i].AuthorName = Aname;
+                Console.WriteLine();
+            }
+            Console.WriteLine("____________________________________________");
+            for (int i = 0; i < total; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{i+1}:  Title = {b1[i].bName},   Author = {b1[i].AuthorName}");
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+_____________________________________________________________________________________________
+Insert the information of two books :
+-----------------------------------------
+Information of book 1 :
+Input name of the book : BASIC
+Input the author : S.TROELSTRA
+
+Information of book 2 :
+Input name of the book : C+
+Input the author : G.RTRTG
+
+____________________________________________
+
+1:  Title = BASIC,   Author = S.TROELSTRA
+
+
+2:  Title = C+,   Author = G.RTRTG

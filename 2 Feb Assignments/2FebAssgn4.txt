@@ -1,0 +1,72 @@
+
+ Write a program to find the Sum and the Average points scored by the teams in the IPL.
+1. Create a Class called Cricket that has a function called Pointscalculation(int no_of_matches) that takes no.of matches 
+ as input and accepts that many scores from the user. The function should then display the Average and Sum of the scores 
+2.. Create a Class called Products with Productid, Product Name, Price. Accept 10 Products, sort them based on the price, and display the sorted Products 
+3. Create a simple Stationery application to add items and display added items using Generic collections Interfaces
+Create a class library CalculateConcession ()  that takes age as an input and calculates concession for travel as below:
+If age<=5 then “Little Champs- Free Ticket” should be displayed
+If age >60 then calculate 30% concession on the totalfare(Which is a constant Eg:500/-) and Display “ Senior Citizen” + Calculated Fare
+Else “Print Ticket Booked” + Fare. 
+Create a Console application with a Class called Program which has TotalFare as Constant, Name, Age.  Accept Name, Age from the user and call the CalculateConcession() function
+
+_____________________________________________________________________________________________________________________________________________________________________________________
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CalculateConcession_;
+
+namespace CalculateConcession_
+{
+    class Class2
+    {
+        public const int ToolFare = 500;
+        static void Main(string[] args)
+        {
+            string Passenger_Name;
+            int Passenger_Age;
+            Console.WriteLine("Enter passenger Name: ");
+            Passenger_Name = Console.ReadLine();
+            Console.WriteLine("Enter passenger Age : ");
+            Passenger_Age = int.Parse(Console.ReadLine());
+            Calculate_Method CM = new Calculate_Method();
+            CM.CalculateConcession(Passenger_Age, ToolFare);
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculateConcession_
+{
+    public class Calculate_Method
+    {
+        public double CalculateConcession(int age, int totalFare)
+        {
+            double totalfare;
+            if (age <= 5)
+            {
+                Console.WriteLine("Little Champs - Free Ticket.");
+            }
+            else if (age > 60)
+            {
+                double concession = 0.3;
+                totalfare = totalFare * concession;
+                Console.WriteLine("Senior Citizen Fare : " + totalfare);
+            }
+            else
+            {
+                Console.WriteLine("Print Tickets Booked with Fare : " + totalFare);
+            }
+            return 0;
+        }
+    }
+}
