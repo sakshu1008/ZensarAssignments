@@ -1,0 +1,45 @@
+﻿@model MvcAssgn2.Models.Movie
+@{
+    ViewBag.Title = "GetMovie";
+}
+
+<h2>GetMovie</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfRelease)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.mid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.mname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfRelease)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.mid }) |
+        @Html.ActionLink("Details", "Details", new { id = item.mid }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.mid })
+    </td>
+</tr>
+    }
+
+</table>

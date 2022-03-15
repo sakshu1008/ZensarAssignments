@@ -1,0 +1,26 @@
+﻿@model MvcAssgn2.Models.Movie
+@{
+    ViewBag.Title = "GetMoviesByYear";
+}
+
+<h2>GetMoviesByYear</h2>
+
+<p>
+    <table class="table">
+        <tr>
+            <th>Movie Id</th>
+            <th>Movie Name</th>
+            <th>Movie ReleaseDate</th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.mid</td>
+                <td>@item.mname</td>
+                <td>@item.DateOfRelease</td>
+            </tr>
+        }
+    </table>
+</p>
